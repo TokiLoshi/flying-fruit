@@ -49,24 +49,6 @@ function ScrollAnimation() {
 	);
 }
 
-function Box() {
-	const boxRef = useRef();
-	useFrame((state) => {
-		boxRef.current.rotation.x = Math.sin(
-			state.clock.elapsedTime + Math.random() * 0.01
-		);
-		boxRef.current.rotation.y = Math.sin(
-			state.clock.elapsedTime + Math.random() * 0.01
-		);
-	});
-	return (
-		<mesh ref={boxRef}>
-			<boxGeometry />
-			<meshBasicMaterial color='mediumpurple' />
-		</mesh>
-	);
-}
-
 function App() {
 	return (
 		<>

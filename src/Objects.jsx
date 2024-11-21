@@ -9,6 +9,24 @@ function handleSpin(ref) {
 	}
 }
 
+function Box() {
+	const boxRef = useRef();
+	useFrame((state) => {
+		boxRef.current.rotation.x = Math.sin(
+			state.clock.elapsedTime + Math.random() * 0.01
+		);
+		boxRef.current.rotation.y = Math.sin(
+			state.clock.elapsedTime + Math.random() * 0.01
+		);
+	});
+	return (
+		<mesh ref={boxRef} onClick={() => handleSpin(boxRef)}>
+			<boxGeometry />
+			<meshBasicMaterial color='mediumpurple' />
+		</mesh>
+	);
+}
+
 export default function Objects() {
 	const scroll = useScroll();
 	const { viewport, size } = useThree();
@@ -40,10 +58,13 @@ export default function Objects() {
 			}
 		}
 	});
+	const boxRef = useRef();
 	return (
 		<>
+			<Box />
 			<group>
 				<mesh
+					position={[2, 1, 1]}
 					ref={planeRef}
 					onClick={() => handleSpin(planeRef)}
 					rotation={[0, 1, 1]}>
