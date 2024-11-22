@@ -1,4 +1,5 @@
 import {
+	Environment,
 	Loader,
 	OrbitControls,
 	Scroll,
@@ -54,7 +55,8 @@ function App() {
 		<>
 			<Canvas shadows>
 				{/* <OrbitControls /> */}
-				<ambientLight />
+				<ambientLight intensity={0.2} />
+				<Environment preset='sunset' />
 				<spotLight position={[10, 10, 10]} intensity={1} />
 				<color attach='background' args={["#ffbf40"]} />
 				<Suspense fallback={null}></Suspense>

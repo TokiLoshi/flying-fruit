@@ -1,4 +1,4 @@
-import { useScroll } from "@react-three/drei";
+import { useGLTF, useScroll } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
 
@@ -20,10 +20,40 @@ function Box() {
 		);
 	});
 	return (
-		<mesh ref={boxRef} onClick={() => handleSpin(boxRef)}>
+		<mesh
+			ref={boxRef}
+			onClick={() => handleSpin(boxRef)}
+			position={[2, 1.5, 2]}>
 			<boxGeometry />
 			<meshBasicMaterial color='mediumpurple' />
 		</mesh>
+	);
+}
+
+export function Papaya(props) {
+	const papayaRef = useRef();
+
+	useFrame((state) => {
+		papayaRef.current.rotation.y = Math.sin(
+			state.clock.elapsedTime + Math.random() * 0.01
+		);
+		papayaRef.current.rotation.z = Math.cos(
+			state.clock.elapsedTime + Math.random() * 0.01
+		);
+	});
+
+	const { nodes, materials } = useGLTF("/models/papaya-v1-transformed.glb");
+	return (
+		<group {...props} dispose={null}>
+			<mesh
+				geometry={nodes.papaya.geometry}
+				material={materials.skin}
+				rotation={[-0.47, -0.369, 1.39]}
+				material-color='orange'
+				ref={papayaRef}
+				onClick={() => handleSpin(papayaRef)}
+			/>
+		</group>
 	);
 }
 
@@ -34,9 +64,9 @@ export default function Objects() {
 	const sphereRef = useRef();
 	const torusRef = useRef();
 
-	console.log(`View port height: ${viewport.height}`);
-	console.log(`View port width: ${viewport.width}`);
-	console.log(`View port size: ${size}`);
+	// console.log(`View port height: ${viewport.height}`);
+	// console.log(`View port width: ${viewport.width}`);
+	// console.log(`View port size: ${size}`);
 
 	useFrame(() => {
 		if (sphereRef.current && torusRef.current) {
@@ -58,10 +88,11 @@ export default function Objects() {
 			}
 		}
 	});
-	const boxRef = useRef();
+
 	return (
 		<>
 			<Box />
+			<Papaya scale={0.5} />
 			<group>
 				<mesh
 					position={[2, 1, 1]}

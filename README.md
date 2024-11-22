@@ -15,7 +15,7 @@ Mango
 https://sketchfab.com/3d-models/mango-ef55eaf1a8ef4c168ffb0560145cb229
 
 Papaya
-https://sketchfab.com/3d-models/blue-papaya-684dcef7bb404dc28db49092674d10fb
+"Blue Papaya" (https://skfb.ly/oqyUV) by NAMAHAGE 120% is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 Banana
 https://sketchfab.com/3d-models/banana-dda3a1f707a94c52bed79578e120937c
