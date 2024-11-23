@@ -30,6 +30,21 @@ function Box() {
 	);
 }
 
+export function Suzanne(props) {
+	const { nodes, materials } = useGLTF("/models/suzanne.gltf");
+	return (
+		<group {...props} dispose={null}>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Suzanne.geometry}
+				material={nodes.Suzanne.material}
+				position={[0, 0.189, -0.043]}
+			/>
+		</group>
+	);
+}
+
 export function Papaya(props) {
 	const papayaRef = useRef();
 
@@ -52,6 +67,30 @@ export function Papaya(props) {
 				material-color='orange'
 				ref={papayaRef}
 				onClick={() => handleSpin(papayaRef)}
+			/>
+		</group>
+	);
+}
+
+export function Pitaya(props) {
+	const pitayaRef = useRef();
+	useFrame((state) => {
+		pitayaRef.current.rotation.x = Math.sin(
+			state.clock.elapsedTime + Math.random() * 0.01
+		);
+		pitayaRef.current.rotation.y = Math.cos(
+			state.clock.elapsedTime + Math.random() * 0.01
+		);
+	});
+	const { nodes, materials } = useGLTF("/models/pitaya-v1-transformed.glb");
+	return (
+		<group {...props} dispose={null}>
+			<mesh
+				geometry={nodes.pitaya.geometry}
+				material={materials.skin}
+				rotation={[3.114, 0, 0]}
+				ref={pitayaRef}
+				onclick={() => handleClick(pitayaRef)}
 			/>
 		</group>
 	);
@@ -91,9 +130,11 @@ export default function Objects() {
 
 	return (
 		<>
+			<Suzanne />
 			<Box />
-			<Papaya scale={0.5} />
 			<group>
+				<Papaya scale={0.5} />
+				<Pitaya position={[2, 1, 1]} />
 				<mesh
 					position={[2, 1, 1]}
 					ref={planeRef}
