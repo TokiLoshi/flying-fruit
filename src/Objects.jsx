@@ -1,6 +1,6 @@
 import { useGLTF, useScroll } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useRef } from "react";
+import { forwardRef, useRef } from "react";
 
 function handleSpin(ref) {
 	console.log("clicked", ref.current);
@@ -60,19 +60,23 @@ export function Suzanne(props) {
 	);
 }
 
-export function Papaya(props) {
-	const papayaRef = useRef();
+export const Papaya = forwardRef((props, ref) => {
+	const localPapayaRef = useRef();
+	const meshRef = localPapayaRef || localPapayaRef;
 
 	useFrame((state) => {
-		papayaRef.current.rotation.y = Math.sin(
-			state.clock.elapsedTime + Math.random() * 0.01
-		);
-		papayaRef.current.rotation.z = Math.cos(
-			state.clock.elapsedTime + Math.random() * 0.01
-		);
+		if (!ref) {
+			meshRef.current.rotation.y = Math.sin(
+				state.clock.elapsedTime + Math.random() * 0.01
+			);
+			meshRef.current.rotation.z = Math.cos(
+				state.clock.elapsedTime + Math.random() * 0.01
+			);
+		}
 	});
 
 	const { nodes, materials } = useGLTF("/models/papaya-v1-transformed.glb");
+
 	return (
 		<group {...props} dispose={null}>
 			<mesh
@@ -80,12 +84,12 @@ export function Papaya(props) {
 				material={materials.skin}
 				rotation={[-0.47, -0.369, 1.39]}
 				material-color='orange'
-				ref={papayaRef}
-				onClick={() => handleSpin(papayaRef)}
+				ref={meshRef}
+				onClick={() => handleSpin(meshRef)}
 			/>
 		</group>
 	);
-}
+});
 
 export function Pitaya(props) {
 	const pitayaRef = useRef();
@@ -117,6 +121,7 @@ export default function Objects() {
 	const planeRef = useRef();
 	const sphereRef = useRef();
 	const torusRef = useRef();
+	const papayaRef = useRef();
 
 	// console.log(`View port height: ${viewport.height}`);
 	// console.log(`View port width: ${viewport.width}`);
@@ -124,7 +129,8 @@ export default function Objects() {
 
 	useFrame(() => {
 		if (sphereRef.current && torusRef.current) {
-			sphereRef.current.position.y = scroll.offset - viewport.height;
+			papayaRef.current.position.y = scroll.offset - viewport.height;
+			sphereRef.current.position.y = scroll.offset - viewport.height * 2;
 			torusRef.current.position.y = scroll.offset - viewport.height * 2;
 
 			sphereRef.current.rotation.y = scroll.offset * Math.PI * 2;
@@ -148,7 +154,7 @@ export default function Objects() {
 			{/* <Suzanne />
 			<Box /> */}
 			<group>
-				<Papaya position={[2, 1, 1]} scale={0.5} />
+				<Papaya position={[2, 1, 1]} scale={0.5} ref={papayaRef} />
 				<Pitaya position={[1, 0, 1]} scale={1} />
 				<Mango position={[1, 0, 0]} scale={5} />
 				{/* <mesh
