@@ -30,6 +30,21 @@ function Box() {
 	);
 }
 
+export function Mango(props) {
+	const { nodes, materials } = useGLTF("/models/mango-v1.glb");
+	return (
+		<group {...props} dispose={null}>
+			<mesh
+				geometry={nodes.mango.geometry}
+				material={materials.skin}
+				rotation={[-1.821, 0.017, -0.072]}
+				// position={[0, 1, 0]}
+				scale={8}
+			/>
+		</group>
+	);
+}
+
 export function Suzanne(props) {
 	const { nodes, materials } = useGLTF("/models/suzanne.gltf");
 	return (
@@ -39,7 +54,7 @@ export function Suzanne(props) {
 				receiveShadow
 				geometry={nodes.Suzanne.geometry}
 				material={nodes.Suzanne.material}
-				position={[0, 0.189, -0.043]}
+				position={[0, -2.189, -0.043]}
 			/>
 		</group>
 	);
@@ -130,12 +145,13 @@ export default function Objects() {
 
 	return (
 		<>
-			<Suzanne />
-			<Box />
+			{/* <Suzanne />
+			<Box /> */}
 			<group>
-				<Papaya scale={0.5} />
-				<Pitaya position={[2, 1, 1]} />
-				<mesh
+				<Papaya position={[2, 1, 1]} scale={0.5} />
+				<Pitaya position={[1, 0, 1]} scale={1} />
+				<Mango position={[1, 0, 0]} scale={5} />
+				{/* <mesh
 					position={[2, 1, 1]}
 					ref={planeRef}
 					onClick={() => handleSpin(planeRef)}
@@ -156,7 +172,7 @@ export default function Objects() {
 					onClick={() => handleSpin(torusRef)}>
 					<torusGeometry />
 					<meshBasicMaterial color='hotpink' />
-				</mesh>
+				</mesh> */}
 			</group>
 		</>
 	);

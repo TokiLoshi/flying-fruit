@@ -14,6 +14,7 @@ https://sketchfab.com/3d-models/dragon-fruit-pitaya-3d3b6f90c4e0453aac368bd0bd50
 
 Mango
 https://sketchfab.com/3d-models/mango-ef55eaf1a8ef4c168ffb0560145cb229
+"Mango" (https://skfb.ly/opCvp) by STUDIO DUCKBILL is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 Papaya
 "Blue Papaya" (https://skfb.ly/oqyUV) by NAMAHAGE 120% is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
