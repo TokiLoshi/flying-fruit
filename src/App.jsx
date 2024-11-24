@@ -10,6 +10,7 @@ import { Suspense, useRef } from "react";
 import Objects from "./Objects";
 import * as THREE from "three";
 import SceneHtml from "./components/SceneHtml";
+import { Leva } from "leva";
 
 // Generate a scroll based animation
 // on each fram check the mouse and the camera
@@ -39,7 +40,7 @@ function ScrollAnimation() {
 		);
 	});
 	return (
-		<ScrollControls pages={3} damping={0.1}>
+		<ScrollControls pages={4} damping={0.1}>
 			<Scroll>
 				<Objects />
 			</Scroll>
@@ -53,6 +54,7 @@ function ScrollAnimation() {
 function App() {
 	return (
 		<>
+			<Leva collapsed />
 			<Canvas shadows>
 				{/* <OrbitControls /> */}
 				<ambientLight intensity={0.2} />
