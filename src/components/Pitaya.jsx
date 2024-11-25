@@ -38,3 +38,4 @@ export const Pitaya = forwardRef((props, ref) => {
 		</group>
 	);
 });
+useGLTF.preload("/models/pitaya-v1-transformed.glb");

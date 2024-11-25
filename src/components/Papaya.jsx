@@ -42,4 +42,4 @@ export const Papaya = forwardRef((props, ref) => {
 	);
 });
 
-useGLTF.preload("/papaya-v1-transformed-transformed.glb");
+useGLTF.preload("/models/papaya-v1-transformed-transformed.glb");

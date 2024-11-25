@@ -60,7 +60,7 @@ function App() {
 			<Canvas shadows>
 				{/* <OrbitControls /> */}
 				<ambientLight intensity={0.2} />
-				<Environment preset='forest' />
+				<Environment preset='sunset' />
 				<spotLight position={[10, 10, 10]} intensity={1} />
 				<color attach='background' args={["#ffbf40"]} />
 				<Suspense fallback={null}></Suspense>
