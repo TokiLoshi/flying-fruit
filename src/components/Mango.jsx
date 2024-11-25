@@ -35,4 +35,4 @@ export const Mango = forwardRef((props, ref) => {
 	);
 });
 
-useGLTF.preload("/mango-v1.glb");
+useGLTF.preload("/models/mango-v1.glb");
