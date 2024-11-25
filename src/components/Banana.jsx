@@ -16,4 +16,4 @@ export function Banana(props) {
 	);
 }
 
-useGLTF.preload("/bananaoptimized-transformed.glb");
+useGLTF.preload("/models/bananaoptimized-transformed.glb");
