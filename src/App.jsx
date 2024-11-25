@@ -4,6 +4,7 @@ import {
 	OrbitControls,
 	Scroll,
 	ScrollControls,
+	Stage,
 } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
@@ -13,6 +14,9 @@ import SceneHtml from "./components/SceneHtml";
 import { Leva } from "leva";
 import { Fruits } from "./components/Fruits";
 
+const city = import("@pmndrs/assets/hdri/city.exr").then(
+	(module) => module.default
+);
 // Generate a scroll based animation
 // on each fram check the mouse and the camera
 // set the camera position to the interpolation of the start x (camera),
@@ -59,8 +63,8 @@ function App() {
 			<Leva collapsed />
 			<Canvas shadows>
 				{/* <OrbitControls /> */}
-				<ambientLight intensity={0.2} />
-				<Environment preset='sunset' />
+				<ambientLight intensity={1.5} />
+				{/* <Environment files={suspend(city)} /> */}
 				<spotLight position={[10, 10, 10]} intensity={1} />
 				<color attach='background' args={["#ffbf40"]} />
 				<Suspense fallback={null}></Suspense>
