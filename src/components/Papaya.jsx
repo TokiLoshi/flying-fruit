@@ -41,3 +41,5 @@ export const Papaya = forwardRef((props, ref) => {
 		</group>
 	);
 });
+
+useGLTF.preload("/papaya-v1-transformed-transformed.glb");

@@ -12,13 +12,13 @@ export default function SceneHtml() {
 			<h1
 				style={{
 					position: "absolute",
-					top: "50vh",
-					left: "50vw",
+					top: "40vh",
+					left: "40vw",
 					transform: "translateX(-50%)",
-					color: "#292828",
+					color: "#a22b2a",
 					margin: 0,
 				}}>
-				Hello, World
+				Hello, Fruity World
 			</h1>
 			<h1
 				style={{
@@ -26,7 +26,7 @@ export default function SceneHtml() {
 					top: "140vh",
 					left: "50vw",
 					transform: "translateX(-65%)",
-					color: "#f4b677",
+					color: "#ff1a55",
 					margin: 0,
 				}}>
 				Your Future
@@ -37,10 +37,21 @@ export default function SceneHtml() {
 					top: "250vh",
 					left: "50vw",
 					transform: "translateX(-50%)",
-					color: "$673ab7",
+					color: "#363996",
 					margin: 0,
 				}}>
 				Awaits
+			</h1>
+			<h1
+				style={{
+					position: "absolute",
+					top: "350vh",
+					left: "50vw",
+					transform: "translateX(-50%)",
+					color: "#123aa7",
+					margin: 0,
+				}}>
+				And it's bananas
 			</h1>
 		</div>
 	);

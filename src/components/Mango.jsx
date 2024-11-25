@@ -1,6 +1,7 @@
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { forwardRef, useRef } from "react";
+import { handleSpin } from "../Objects";
 
 export const Mango = forwardRef((props, ref) => {
 	const { nodes, materials } = useGLTF("/models/mango-v1.glb");
@@ -27,9 +28,11 @@ export const Mango = forwardRef((props, ref) => {
 				rotation={[-1.821, 0.017, -0.072]}
 				// position={[x, y, z]}
 				ref={meshRef}
-				scale={5}
+				// scale={5}
 				onClick={() => handleSpin(meshRef)}
 			/>
 		</group>
 	);
 });
+
+useGLTF.preload("/mango-v1.glb");

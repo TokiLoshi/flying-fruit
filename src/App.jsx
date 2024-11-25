@@ -11,6 +11,7 @@ import Objects from "./Objects";
 import * as THREE from "three";
 import SceneHtml from "./components/SceneHtml";
 import { Leva } from "leva";
+import { Fruits } from "./components/Fruits";
 
 // Generate a scroll based animation
 // on each fram check the mouse and the camera
@@ -40,9 +41,10 @@ function ScrollAnimation() {
 		);
 	});
 	return (
-		<ScrollControls pages={4} damping={0.1}>
+		<ScrollControls pages={5} damping={0.1}>
 			<Scroll>
-				<Objects />
+				{/* <Objects /> */}
+				<Fruits />
 			</Scroll>
 			<Scroll html>
 				<SceneHtml />
@@ -58,7 +60,7 @@ function App() {
 			<Canvas shadows>
 				{/* <OrbitControls /> */}
 				<ambientLight intensity={0.2} />
-				<Environment preset='sunset' />
+				<Environment preset='forest' />
 				<spotLight position={[10, 10, 10]} intensity={1} />
 				<color attach='background' args={["#ffbf40"]} />
 				<Suspense fallback={null}></Suspense>

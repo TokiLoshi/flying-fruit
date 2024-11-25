@@ -8,6 +8,40 @@ import { Mango } from "./components/Mango";
 import { Pitaya } from "./components/Pitaya";
 import { Suzanne } from "./components/Suzanne";
 
+export function Sushi(props) {
+	const { nodes, materials } = useGLTF("/models/sushi-v1-transformed.glb");
+	return (
+		<group {...props} dispose={null}>
+			<mesh
+				geometry={nodes.Sushi.geometry}
+				material={materials.PaletteMaterial001}
+				position={[1.979, 0.661, -1.007]}
+				rotation={[Math.PI, -0.007, Math.PI]}
+				scale={0.722}
+			/>
+			<mesh
+				geometry={nodes.Backdrop.geometry}
+				material={materials.PaletteMaterial002}
+				scale={28.469}
+			/>
+			<mesh
+				geometry={nodes.Plane006.geometry}
+				material={nodes.Plane006.material}
+				position={[-7.035, 0.238, -2.894]}
+				rotation={[0, 0.113, 0]}
+			/>
+			<instancedMesh
+				args={[nodes.Plane007.geometry, materials.PaletteMaterial001, 5]}
+				instanceMatrix={nodes.Plane007.instanceMatrix}
+			/>
+			<instancedMesh
+				args={[nodes.Plane007_1.geometry, materials.PaletteMaterial001, 5]}
+				instanceMatrix={nodes.Plane007_1.instanceMatrix}
+			/>
+		</group>
+	);
+}
+
 export function handleSpin(ref) {
 	console.log("clicked", ref.current);
 	if (ref.current) {
