@@ -1,27 +1,58 @@
-# React + Vite
+# Flying Fruit 🍉🍍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Flying Fruit is a creative playground for exploring scroll animations with React Three Fiber and Drei while working with 3D models optimized for the web. This project was inspired by Paul Henschel's [Flying Bananas tutorial](https://codesandbox.io/p/sandbox/2ycs3?file=%2Fpackage.json). It’s a great starting point for learning about 3D scroll animations, interactive scenes, and best practices for working with models in web projects.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Scroll animations**: Learn how to animate objects in a 3D scene based on user scroll input.
+- **Optimized 3D models**: Use Sketchfab assets for high-quality visuals while keeping performance in mind.
+- **Environment map**: An AI-generated skybox to enhance the realism of the scene.
+- **Beginner-friendly setup**: Simple and approachable for anyone new to React Three Fiber or Drei.
 
-Models:
-Dragon Fruit
-https://sketchfab.com/3d-models/dragon-fruit-pitaya-3d3b6f90c4e0453aac368bd0bd50c960
-"Pitaya - Photogrammetry" (https://skfb.ly/or7Er) by Moshe Caine is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+---
 
-Mango
-https://sketchfab.com/3d-models/mango-ef55eaf1a8ef4c168ffb0560145cb229
-"Mango" (https://skfb.ly/opCvp) by STUDIO DUCKBILL is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+## Models
 
-Papaya
-"Blue Papaya" (https://skfb.ly/oqyUV) by NAMAHAGE 120% is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+### Dragon Fruit
 
-Banana
-https://sketchfab.com/3d-models/banana-dda3a1f707a94c52bed79578e120937c
-"Banana" (https://skfb.ly/6YL6r) by Lassi Kaukonen is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+- **Source**: ["Pitaya - Photogrammetry"](https://skfb.ly/or7Er) by Moshe Caine
+- **License**: [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)  
+  ![Placeholder for Dragon Fruit Model Image](#)
 
-Env Map is AI generated using (Skybox Labs)[https://skybox.blockadelabs.com/]
-Because these files tend to be rather large, I used (Matheowis' HDR to Cube Map converter)[https://matheowis.github.io/HDRI-to-CubeMap/]
+### Mango
+
+- **Source**: ["Mango"](https://skfb.ly/opCvp) by STUDIO DUCKBILL
+- **License**: [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)  
+  ![Placeholder for Mango Model Image](#)
+
+### Papaya
+
+- **Source**: ["Blue Papaya"](https://skfb.ly/oqyUV) by NAMAHAGE 120%
+- **License**: [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)  
+  ![Placeholder for Papaya Model Image](#)
+
+### Banana
+
+- **Source**: ["Banana"](https://skfb.ly/6YL6r) by Lassi Kaukonen
+- **License**: [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)  
+  ![Placeholder for Banana Model Image](#)
+
+---
+
+## Environment Map 🌌
+
+The environment map was generated using [Skybox Labs](https://skybox.blockadelabs.com/). Large HDR files were converted to cube maps using [Matheowis' HDR to Cube Map Converter](https://matheowis.github.io/HDRI-to-CubeMap/) to ensure optimal performance.
+
+---
+
+## Setup
+
+1. Clone this repository.
+2. Install dependencies with `npm install`.
+3. Start the development server with `npm start`.
+
+---
+
+## Inspiration
+
+This project is inspired by the [Flying Bananas tutorial](https://codesandbox.io/p/sandbox/2ycs3?file=%2Fpackage.json) by Paul Henschel ([@0xca0a](https://twitter.com/0xca0a)).

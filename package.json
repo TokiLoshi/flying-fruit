@@ -13,6 +13,7 @@
     "@pmndrs/assets": "^1.7.0",
     "@react-three/drei": "^9.117.3",
     "@react-three/fiber": "^8.17.10",
+    "@react-three/uikit": "^0.8.4",
     "@types/three": "^0.170.0",
     "leva": "^0.9.35",
     "react": "^18.3.1",

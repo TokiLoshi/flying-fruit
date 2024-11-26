@@ -33,6 +33,7 @@ export const Mango = forwardRef((props, ref) => {
 				material={materials.skin}
 				rotation={[-1.821, 0.017, -0.072]}
 				ref={meshRef}
+				scale={2}
 				onClick={() => handleSpin(meshRef)}
 				onPointerOver={() => (document.body.style.cursor = "pointer")}
 				onPointerOut={() => (document.body.style.cursor = "default")}

@@ -54,10 +54,9 @@ function App() {
 	return (
 		<>
 			<Leva collapsed hidden={location.hash !== "#debug"} />
-			<Canvas shadows>
+			<Canvas shadows gl={{ localClippingEnabled: true }}>
 				{/* <OrbitControls /> */}
 				<ambientLight intensity={2} />
-
 				<Environment
 					files={[
 						"./envMaps/px.png",
