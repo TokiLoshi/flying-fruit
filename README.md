@@ -23,5 +23,5 @@ Banana
 https://sketchfab.com/3d-models/banana-dda3a1f707a94c52bed79578e120937c
 "Banana" (https://skfb.ly/6YL6r) by Lassi Kaukonen is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-TODO:
-Expore the glfjsx autoinstancing flag if you're going to use multiple. https://gltf.pmnd.rs/ "Auto-instancing"
+Env Map is AI generated using (Skybox Labs)[https://skybox.blockadelabs.com/]
+Because these files tend to be rather large, I used (Matheowis' HDR to Cube Map converter)[https://matheowis.github.io/HDRI-to-CubeMap/]
