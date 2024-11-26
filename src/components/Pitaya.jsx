@@ -1,7 +1,6 @@
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { forwardRef, useRef } from "react";
-// import { handleSpin } from "../Objects";
 import { useControls } from "leva";
 
 function handleSpin(ref) {
