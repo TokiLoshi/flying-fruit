@@ -2,7 +2,13 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
 import { forwardRef, useRef } from "react";
-import { handleSpin } from "../Objects";
+
+function handleSpin(ref) {
+	console.log("clicked", ref.current);
+	if (ref.current) {
+		ref.current.rotation.x += 1;
+	}
+}
 
 export const Papaya = forwardRef((props, ref) => {
 	const localPapayaRef = useRef();
@@ -37,6 +43,8 @@ export const Papaya = forwardRef((props, ref) => {
 				material-color='orange'
 				ref={meshRef}
 				onClick={() => handleSpin(meshRef)}
+				onPointerOver={() => (document.body.style.cursor = "pointer")}
+				onPointerOut={() => (document.body.style.cursor = "default")}
 			/>
 		</group>
 	);

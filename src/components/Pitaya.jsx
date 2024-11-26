@@ -1,8 +1,15 @@
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { forwardRef, useRef } from "react";
-import { handleSpin } from "../Objects";
+// import { handleSpin } from "../Objects";
 import { useControls } from "leva";
+
+function handleSpin(ref) {
+	console.log("Pitay clicked", ref.current);
+	if (ref.current) {
+		ref.current.rotation.z += 1;
+	}
+}
 
 export const Pitaya = forwardRef((props, ref) => {
 	const localPitayaRef = useRef();
@@ -34,6 +41,8 @@ export const Pitaya = forwardRef((props, ref) => {
 				scale={scale}
 				ref={meshRef}
 				onClick={() => handleSpin(meshRef)}
+				onPointerOver={() => (document.body.style.cursor = "pointer")}
+				onPointerOut={() => (document.body.style.cursor = "default")}
 			/>
 		</group>
 	);
