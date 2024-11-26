@@ -2,7 +2,7 @@
 
 Flying Fruit is a creative playground for exploring scroll animations with React Three Fiber and Drei while working with 3D models optimized for the web. This project was inspired by Paul Henschel's [Flying Bananas tutorial](https://codesandbox.io/p/sandbox/2ycs3?file=%2Fpackage.json). It’s a great starting point for learning about 3D scroll animations, interactive scenes, and best practices for working with models in web projects.
 
-![Placeholder for favicon](https://raw.githubusercontent.com/TokiLoshi/flying-fruit/main/public/favicon.png)
+![Placeholder for favicon](https://github.com/TokiLoshi/flying-fruit/blob/main/public/favicon.png)
 
 ## Features
 
@@ -57,4 +57,4 @@ The environment map was generated using [Skybox Labs](https://skybox.blockadelab
 
 ## Inspiration
 
-This project is inspired by the [Flying Bananas tutorial](https://codesandbox.io/p/sandbox/2ycs3?file=%2Fpackage.json) by Paul Henschel ([@0xca0a](https://twitter.com/0xca0a)).
+This project is inspired by the [Flying Bananas tutorial](https://codesandbox.io/p/sandbox/2ycs3?file=%2Fpackage.json) by Paul Henschel. And was based on the classic scroll animation by [Poimandres recreating Three.js Journey's techniques in R3F](https://journey.pmnd.rs/classic-techniques/scroll-based-animation).
